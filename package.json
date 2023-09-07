@@ -1,0 +1,23 @@
+{
+  "name": "random-pass",
+  "version": "1.0.0",
+  "description": "Генератор паролей",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch app/scss/ -o app/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oipik/random-pass.git"
+  },
+  "author": "Куркин Игорь",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oipik/random-pass/issues"
+  },
+  "homepage": "https://github.com/oipik/random-pass#readme",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
