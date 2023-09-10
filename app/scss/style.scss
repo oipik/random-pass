@@ -24,6 +24,7 @@ body {
     &__password {
         padding-bottom: 40px;
         font: 80px/normal 'Open Sans';
+        word-break: break-all;
     }
     &__btn {
         text-align: center;

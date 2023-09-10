@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return arr;
     }
 
-    
-
     let arrayWords = array(65, 90).concat(array(97, 122)),
         arrayNumbers = array(48, 57),
         arraySymbols = array(33, 47).concat(array(58, 64));
@@ -36,40 +34,38 @@ document.addEventListener('DOMContentLoaded', () => {
             randomNumbers(numbers.checked, false, valueRange.value);
         } else if(symbols.checked) {
             randomNumbers(false, symbols.checked, valueRange.value);
-        } 
+        } else {
+            randomNumbers(null, null, valueRange.value);
+        }
     });
 
-    function randomNumbers(numbers, symbols, length) {
+    function randomNumbers(numbers = false, symbols = false, length) {
         pass.textContent = '';
         let all = [];
 
         if(numbers && symbols) {
             all = arrayWords.concat(arrayNumbers, arraySymbols);
 
-            console.log(all)
-            console.log(length)
-
             for(let i = 1; i <= length; i++) {
                 pass.textContent += all[Math.floor(Math.random() * all.length)];
             }
-        }
-
-        if(numbers) {
+        } else if(numbers) {
             all = arrayWords.concat(arrayNumbers);
 
             for(let i = 1; i <= length; i++) {
                 pass.textContent += all[Math.floor(Math.random() * all.length)];
             }
-        }
-
-        if(symbols) {
+        } else if(symbols) {
             all = arrayWords.concat(arraySymbols);
 
             for(let i = 1; i <= length; i++) {
                 pass.textContent += all[Math.floor(Math.random() * all.length)];
             }
-        }
+        } else if(!numbers && !symbols) {
 
-        
+            for(let i = 1; i <= length; i++) {
+                pass.textContent += arrayWords[Math.floor(Math.random() * arrayWords.length)];
+            }
+        }
     }
 });
